@@ -15,7 +15,8 @@
 body{
   width:414px;
   font-size: 12px;
-  background-image:  url(/img/caukhanhhoicaukhanhhoi.jpg);
+/*   background-image:  url(/img/caukhanhhoicaukhanhhoi.jpg); */
+  background-image: url(https://f9-zpcloud.zdn.vn/5265987045685071480/ad1e1651d2f10eaf57e0.jpg);
   background-repeat: no-repeat;
   background-size:414px 1000px;
   display:flex;
