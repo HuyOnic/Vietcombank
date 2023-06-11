@@ -160,8 +160,9 @@
 {
         list-style: none;
         display:flex;
-        justify-content: space-around;
-        margin:40px;
+        justify-content: space-between;
+        margin:40px auto;
+        width:140px;
 }
 .vcb__footer--items
 {
@@ -180,6 +181,7 @@
 .vcb__containter--newbill
 {
         margin:auto;
+        margin-top: 170px;
         font-size: 14px;
         width: 370px;
         border-radius:6px;

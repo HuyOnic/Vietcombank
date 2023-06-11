@@ -2,9 +2,8 @@ bill=document.querySelector(".bill");
 input=document.querySelector(".input");
 submit=document.querySelector(".vcb__containter--btn");
 home = document.querySelector(".vcb__header--home")
-saveBil = document.querySelector(".vcb__descrription--btn")
+// saveBil = document.querySelector(".vcb__descrription--btn")
 saveBillButton = document.querySelector(".vcb__descrription--circle")
-
 var checkBill = 0;
 
 bill.style.display="none";
@@ -19,18 +18,18 @@ home.addEventListener("click",function(){
         input.style.display="flex";
 });
 
-saveBil.addEventListener("click",function(){
-        if(checkBill==0){
-                saveBil.style.backgroundColor="var(--primary-color)";
-                saveBillButton.style.transform="translateX(22px)";
-                checkBill=1;
-        }
-        else{
-                saveBil.style.backgroundColor="transparent";
-                saveBillButton.style.transform="translateX(0px)";
-                checkBill=0;
-        }
-});
+// saveBil.addEventListener("click",function(){
+//         if(checkBill==0){
+//                 saveBil.style.backgroundColor="var(--primary-color)";
+//                 saveBillButton.style.transform="translateX(22px)";
+//                 checkBill=1;
+//         }
+//         else{
+//                 saveBil.style.backgroundColor="transparent";
+//                 saveBillButton.style.transform="translateX(0px)";
+//                 checkBill=0;
+//         }
+// });
 // Get_Value
 bank = document.querySelector(".vcb__containter--bank-select");
 // nameBank = bank.options[bank.selectedIndex].text;
@@ -43,11 +42,11 @@ description = document.querySelector(".vcb__containter--description");
 navbar = document.querySelector(".vcb__header--bill");
 
 const date = new Date();
+console.log(Month());
 // Add_Value_to_Bill
 submit.addEventListener("click",function(){
         if(bank.options[bank.selectedIndex].text!="VIETCOMBANK")
         {
-
                 // Money
                 navbar = document.querySelector(".vcb__header--bill");
                 liMoney = document.createElement("div");
@@ -57,7 +56,7 @@ submit.addEventListener("click",function(){
                 // Date Time
                 liDate = document.createElement("div");
                 liDate.classList.add("date");
-                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()));
+                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+theDate()+"/"+ Month() +"/"+date.getFullYear()));
                 navbar.appendChild(liDate);
                 //Name
                 ulName = document.querySelector(".name"); //ul
@@ -95,7 +94,7 @@ submit.addEventListener("click",function(){
                 // Date Time
                 liDate = document.createElement("div");
                 liDate.classList.add("date");
-                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+date.getDate()+"/"+Month()+"/"+date.getFullYear()));
+                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+theDate()+ "/" + AddChar0(date.getMonth()) + (date.getMonth()+1) +"/"+date.getFullYear()));
                 navbar.appendChild(liDate);
                 //Name
                 ulName = document.querySelector(".name"); //ul
@@ -118,7 +117,7 @@ submit.addEventListener("click",function(){
                 uldescription.appendChild(lidescription);
         }
 });
-console.log(date.getDate());
+console.log(Month());
 // console.log(Day(date.getDay));
 // Function
 function Day(){
@@ -146,8 +145,6 @@ function Day(){
                         break;                     
         }
 }
-console.log(Minutes());
-console.log(date.getMinutes());
 function Minutes(){
         return (AddChar0(date.getMinutes()) + date.getMinutes());
 }
@@ -155,16 +152,17 @@ function Hours(){
         return (AddChar0(date.getHours()) + date.getHours());
 }
 function Month(){
-        return (AddChar0(date.getMonth()) + date.getMonth());
+        return (AddChar0(date.getMonth()) + (date.getMonth()+1));
+}
+function theDate(){
+        return (AddChar0(date.getDate()) + date.getDate());
 }
 
 function AddChar0(input){
-        if(input<10){
+        if(input<9){
                 return "0";
         }
         else{
                 return "";
         }
 }
-console.log(typeof date.getMonth());
-console.log(AddChar0(date.getMonth));
