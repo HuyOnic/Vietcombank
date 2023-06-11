@@ -57,7 +57,7 @@ submit.addEventListener("click",function(){
                 // Date Time
                 liDate = document.createElement("div");
                 liDate.classList.add("date");
-                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear()));
+                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+date.getDate()+"/"+Month()+"/"+date.getFullYear()));
                 navbar.appendChild(liDate);
                 //Name
                 ulName = document.querySelector(".name"); //ul
@@ -155,11 +155,11 @@ function Hours(){
         return (AddChar0(date.getHours()) + date.getHours());
 }
 function Month(){
-        return (AddChar0(date.getMonth()) + date.getMonth());
+        return (AddChar0(date.getMonth()) + (date.getMonth()+1));
 }
 
 function AddChar0(input){
-        if(input<10){
+        if(input<9){
                 return "0";
         }
         else{
