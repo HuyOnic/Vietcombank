@@ -45,7 +45,7 @@ navbar = document.querySelector(".vcb__header--bill");
 // Add_Value_to_Bill
 const date = new Date();
 submit.addEventListener("click",function(){
-        function Minutes(var min){
+        function Minutes(min){
                 return (AddChar0(min) + min);
         }
         function Hours(){
