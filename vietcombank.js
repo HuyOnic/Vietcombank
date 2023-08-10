@@ -42,12 +42,11 @@ money = document.querySelector(".vcb__containter--money");
 description = document.querySelector(".vcb__containter--description");
 navbar = document.querySelector(".vcb__header--bill");
 
-const date = new Date();
 // Add_Value_to_Bill
 submit.addEventListener("click",function(){
+        const date = new Date();
         if(bank.options[bank.selectedIndex].text!="VIETCOMBANK")
         {
-
                 // Money
                 navbar = document.querySelector(".vcb__header--bill");
                 liMoney = document.createElement("div");
@@ -118,8 +117,6 @@ submit.addEventListener("click",function(){
                 uldescription.appendChild(lidescription);
         }
 });
-console.log(date.getDate());
-// console.log(Day(date.getDay));
 // Function
 function Day(){
         switch(date.getDay()){
@@ -146,8 +143,6 @@ function Day(){
                         break;                     
         }
 }
-console.log(Minutes());
-console.log(date.getMinutes());
 function Minutes(){
         return (AddChar0(date.getMinutes()) + date.getMinutes());
 }
@@ -168,5 +163,3 @@ function AddChar0(input){
                 return "";
         }
 }
-console.log(typeof date.getMonth());
-console.log(AddChar0(date.getMonth));
