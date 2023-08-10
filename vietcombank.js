@@ -45,8 +45,8 @@ navbar = document.querySelector(".vcb__header--bill");
 // Add_Value_to_Bill
 const date = new Date();
 submit.addEventListener("click",function(){
-        function Minutes(){
-                return (AddChar0(date.getMinutes()) + date.getMinutes());
+        function Minutes(var min){
+                return (AddChar0(min) + min);
         }
         function Hours(){
                 return (AddChar0(date.getHours()) + date.getHours());
@@ -76,7 +76,7 @@ submit.addEventListener("click",function(){
                 // Date Time
                 liDate = document.createElement("div");
                 liDate.classList.add("date");
-                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes()+" "+Day()+" "+theDate()+"/"+Month()+"/"+date.getFullYear()));
+                liDate.appendChild(document.createTextNode(Hours()+":"+Minutes(date.getMinutes())+" "+Day()+" "+theDate()+"/"+Month()+"/"+date.getFullYear()));
                 navbar.appendChild(liDate);
                 //Name
                 ulName = document.querySelector(".name"); //ul
