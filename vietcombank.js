@@ -59,7 +59,7 @@ submit.addEventListener("click",function(){
                 return (AddChar0(date.getDate()) + date.getDate());
         }
         function AddChar0(input){
-                if(input<9){
+                if(input<10){
                         return "0";
                 }
                 else{
