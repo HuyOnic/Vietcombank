@@ -53,7 +53,7 @@ submit.addEventListener("click",function(){
                 return (AddChar0(date.getHours()) + date.getHours());
         }
         function Month(){
-                return (AddChar0(date.getMonth()) + (date.getMonth()+1));
+                return (AddChar0(date.getMonth()+1) + (date.getMonth()+1));
         }
         function theDate(){
                 return (AddChar0(date.getDate()) + date.getDate());
