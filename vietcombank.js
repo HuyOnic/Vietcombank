@@ -4,8 +4,8 @@ submit=document.querySelector(".vcb__containter--btn");
 home = document.querySelector(".vcb__header--home")
 saveBil = document.querySelector(".vcb__descrription--btn")
 saveBillButton = document.querySelector(".vcb__descrription--circle")
-let bill_id = generateRandom()
-document.querySelector('#bill-id').value = bill_id
+// let bill_id = generateRandom()
+// document.querySelector('#bill-id').value = bill_id
 var checkBill = 0;
 
 bill.style.display="none";
