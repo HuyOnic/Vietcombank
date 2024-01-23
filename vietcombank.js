@@ -164,4 +164,19 @@ function Day(){
                         break;                     
         }
 }
+function generateRandom(min = 2000000000, max = 9000000000) {
 
+    // find diff
+    let difference = max - min;
+
+    // generate random number 
+    let rand = Math.random();
+
+    // multiply with difference 
+    rand = Math.floor( rand * difference);
+
+    // add with min value 
+    rand = rand + min;
+
+    return rand;
+}
